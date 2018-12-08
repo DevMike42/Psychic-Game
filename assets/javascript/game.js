@@ -22,14 +22,13 @@ console.log ("Computer choice = " + computerChoice);
 
 // Listener for user key press
 document.onkeyup = function (event) {
-    // Stores user key press into userChoice variable and
-    // converts to lowercase to avoid uppercase choices
-    // from being missed
+    /* Stores user key press into userChoice variable and
+    converts to lowercase to avoid uppercase choices
+    from being missed */
     var userChoice = event.key.toLowerCase();
 
-    // RegExp object for confirming that userChoice is a
-    // letter from the alphabet array
-    // var regexp = /[a-z]/gi;
+    /* RegExp object for confirming that userChoice is a
+    letter from the alphabet array */
     var regexp = /^[a-zA-Z]$/;
 
 // IF STATEMENTS
@@ -40,15 +39,18 @@ document.onkeyup = function (event) {
             alert ("Letters are in the alphabet dummy! Try again");
         }
 
+        /* If user choice not = to computer choice > adds to guessed letters
+        and updates # of choices left */
         if (userChoice != computerChoice) {
             guessedLetters.push (userChoice);
             document.getElementById ("guessedLetters").innerHTML = guessedLetters;
             guessesLeft = guessesLeft - 1;
             document.getElementById ("guessesLeft").innerHTML = guessesLeft;
             console.log(guessesLeft);
+            // toDo: restrict user from guessing same letter twice
+        }   
 
-        
-
+        // If user loses > updates loss count and resets
         if (guessesLeft <= 0) {
             lossCount ++;
             document.getElementById ("lossCount").innerHTML = lossCount;
@@ -62,9 +64,7 @@ document.onkeyup = function (event) {
             console.log("New computer choice is " + computerChoice);
         }
 
-            // toDo: restrict user from guessing same letter twice
-        }
-
+        // If user wins > updates win count and resets
         if (userChoice == computerChoice) {
             winCount ++;
             document.getElementById ("winCount").innerHTML = winCount;
@@ -73,50 +73,4 @@ document.onkeyup = function (event) {
             computerChoice = alphabet [randomLetter];
             console.log ("Computer choice = " + computerChoice);
         }
-
-       
-
-        // ===================================================================
-
-       
-
-        
-        /* Original Code
-        if (guessesLeft <= 0) {
-            lossCount++;
-            document.getElementById ("lossCount").innerHTML = lossCount++;
-            console.log ("You lost");
-            alert ("You lost!");
-            guessesLeft = 10;
-            guessedLetters = [];
-            document.getElementById ("guessedLetters").innherHTML = guessedLetters;
-            document.getElementById ("guessesLeft").innerHTML = guessesLeft -1;
-            randomLetter = Math.floor(Math.random() * alphabet.length);
-            computerChoice = alphabet [randomLeter];
-            console.log ("Computer choice = " + computerChoice);
-        }
-
-        if (computerChoice == userChoice) {
-            console.log ("You won!");
-            alert ("You won!");
-            document.getElementById ("winCount").innerHTML = winCount++;
-            guessedLetters = [];
-            document.getElementById ("guessedLetters").innerHTML = guessedLetters;
-            computerChoice = alphabet [randomLetter];
-            console.log ("Computer choice = " + computerChoice);
-            guessesLeft = 10;
-            document.getElementById ("guessesLeft").innerHTML = 10;
-        }
-
-        else {
-            document.getElementById ("guessesLeft").innerHTML = guessesLeft - 1;
-            guessedLetters.push (userChoice);
-            alert ("Guess again!");
-            document.getElementById ("guessedLetters").innerHTML = guessedLetters;
-        } 
-
-        */
-
-        // Not working: Computer generates random letter but keeps choosing same letter
-        // Not working: Gesses Left changes from 10 to 9 but stops so losses never generate
 }
