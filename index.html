@@ -5,26 +5,31 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Psychic Guessing Game</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 </head>
 
 <body>
+    <div class = "container"> 
+        <h1>Psychic Game</h1>
+        <h2>aka Educated Guessing Game</h2>
 
-    <h1>Psychic Game</h1>
+        <div class = "game">
+            <p>Guess what letter I'm thinking of</p>
 
-        <p>Guess what letter I'm thinking of</p>
+            <p id = "Wins">Wins:</p>
+            <p id = "winCount">0</p>
 
-        <p>Wins:</p>
-        <p id = "winCount">0</p>
+            <p>Loses:</p>
+            <p id = "lossCount">0</p>
 
-        <p>Loses:</p>
-        <p id = "lossCount">0</p>
+            <p>Guesses left:</p>
+            <p id = "guessesLeft">10</p>
 
-        <p>Guesses left:</p>
-        <p id = "guessesLeft">10</p>
-
-        <p>Your guesses so far:</p>
-        <p id = "guessedLetters"></p>
+            <p>Your guesses so far:</p>
+            <p id = "guessedLetters"></p>
+        </div>
+    </div>
    
     <script src ="assets/javascript/game.js"></script>
 

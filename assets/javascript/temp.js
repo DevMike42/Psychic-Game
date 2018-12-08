@@ -1,6 +1,6 @@
 // VARIABLES DEFINED FOR GAME
 // ===================================================================
-var winCount = 0;
+var winCount = 1;
 var lossCount = 0;
 var guessesLeft = 10;
 var guessedLetters = [];
@@ -29,69 +29,29 @@ document.onkeyup = function (event) {
 
     // RegExp object for confirming that userChoice is a
     // letter from the alphabet array
-    // var regexp = /[a-z]/gi;
-    var regexp = /^[a-zA-Z]$/;
-
-// IF STATEMENTS
-// ===================================================================
+    var regexp = /[a-z]/gi;
 
         // Alerts user to try again if key other than letter is chosen
         if (!regexp.test (userChoice)) {
             alert ("Letters are in the alphabet dummy! Try again");
         }
 
-        if (userChoice != computerChoice) {
-            guessedLetters.push (userChoice);
-            document.getElementById ("guessedLetters").innerHTML = guessedLetters;
-            guessesLeft = guessesLeft - 1;
-            document.getElementById ("guessesLeft").innerHTML = guessesLeft;
-            console.log(guessesLeft);
-
-        
-
-        if (guessesLeft <= 0) {
-            lossCount ++;
-            document.getElementById ("lossCount").innerHTML = lossCount;
-            alert ("You lost");
-            guessesLeft = 10;
-            document.getElementById ("guessesLeft").innerHTML = guessesLeft;
-            guessedLetters = [];
-            document.getElementById ("guessedLetters").innerHTML = guessedLetters;
-            randomLetter = Math.floor(Math.random() * alphabet.length);
-            computerChoice = alphabet [randomLetter];
-            console.log("New computer choice is " + computerChoice);
+        else {
         }
 
-            // toDo: restrict user from guessing same letter twice
-        }
+// If statmens that determine wins and loses. Also tracks progress
+// ===================================================================
 
-        if (userChoice == computerChoice) {
-            winCount ++;
-            document.getElementById ("winCount").innerHTML = winCount;
-            alert ("You won!");
-            randomLetter = Math.floor(Math.random() * alphabet.length);
-            computerChoice = alphabet [randomLetter];
-            console.log ("Computer choice = " + computerChoice);
-        }
-
-       
-
-        // ===================================================================
-
-       
-
-        
-        /* Original Code
         if (guessesLeft <= 0) {
             lossCount++;
-            document.getElementById ("lossCount").innerHTML = lossCount++;
+            document.getElementById ("lossCounty").innerHTML = lossCount++;
             console.log ("You lost");
             alert ("You lost!");
             guessesLeft = 10;
             guessedLetters = [];
             document.getElementById ("guessedLetters").innherHTML = guessedLetters;
             document.getElementById ("guessesLeft").innerHTML = guessesLeft -1;
-            randomLetter = Math.floor(Math.random() * alphabet.length);
+            // randomLetter = Math.floor(Math.random() * alphabet.length);
             computerChoice = alphabet [randomLeter];
             console.log ("Computer choice = " + computerChoice);
         }
@@ -113,10 +73,6 @@ document.onkeyup = function (event) {
             guessedLetters.push (userChoice);
             alert ("Guess again!");
             document.getElementById ("guessedLetters").innerHTML = guessedLetters;
-        } 
-
-        */
-
+        }
         // Not working: Computer generates random letter but keeps choosing same letter
-        // Not working: Gesses Left changes from 10 to 9 but stops so losses never generate
 }
