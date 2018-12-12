@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,28 +11,27 @@
 </head>
 
 <body>
-    <div class = "container"> 
+    <div class="flex-container">
         <h1>Psychic Game</h1>
-        <h2>aka Educated Guessing Game</h2>
-
-        <div class = "game">
-            <p>Guess what letter I'm thinking of</p>
-
-            <p id = "Wins">Wins:</p>
-            <p id = "winCount">0</p>
-
-            <p>Loses:</p>
-            <p id = "lossCount">0</p>
-
+        <img id="game-img" src="assets/images/1w3X.gif" />
+        <h2>Guess what letter I'm thinking of</h2>
+            <div class="game-info">
+                <p id="Wins">Wins:</p>
+                <p id="winCount">0</p>
+                <p>Loses:</p>
+                <p id="lossCount">0</p>
+            </div> 
+        <div class="guesses">
             <p>Guesses left:</p>
-            <p id = "guessesLeft">10</p>
-
+            <p id="guessesLeft">10</p>
             <p>Your guesses so far:</p>
-            <p id = "guessedLetters"></p>
+            <p id="guessedLetters"></p>
         </div>
     </div>
-   
-    <script src ="assets/javascript/game.js"></script>
+    </div>
+
+    <script src="assets/javascript/game.js"></script>
 
 </body>
+
 </html>
